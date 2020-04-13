@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected  void onStop() {
-        unbindService(serviceConnection);
+        if(started == true) {
+            unbindService(serviceConnection);
+        }
         super.onStop();
     }
 
