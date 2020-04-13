@@ -2,6 +2,7 @@ package ro.pub.cs.systems.eim.Colocviu1_13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -61,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void handleEast(View view) {
         directions.add(EAST);
+        updateText();
+    }
+
+    public void handleSecondActivity(View view) {
+        Intent i = new Intent(MainActivity.this, Colocviu1_13SecondaryActivity.class);
+        startActivity(i);
+        directions = new ArrayList<String>();
         updateText();
     }
 
